@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "NurtureSafe — Pregnancy-Safe Ingredient Check",
+  "version": "1.0.0",
+  "description": "Gentle, instant ingredient safety checks for pregnancy & nursing on any product page. Works offline. Not medical advice.",
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "NurtureSafe",
+    "default_icon": { "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["toxicology.js", "content.js"],
+      "css": ["widget.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --safe:#3f9d6d; --ink:#3a3330; --muted:#8a7f78; }
+  body { width: 300px; margin: 0; font-family: ui-rounded,"Segoe UI",system-ui,sans-serif; color: var(--ink); background:#fffdfa; }
+  .hd { display:flex; align-items:center; gap:8px; padding:16px 16px 10px; }
+  .hd svg { color: var(--safe); }
+  .hd b { font-size:16px; background:linear-gradient(90deg,#3f9d6d,#5fb98a); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .body { padding: 2px 16px 14px; font-size:13px; line-height:1.5; color:#4a423d; }
+  .steps { margin:10px 0; padding:0; list-style:none; }
+  .steps li { display:flex; gap:8px; margin:7px 0; }
+  .n { flex:0 0 20px; height:20px; border-radius:50%; background:#eaf6ee; color:var(--safe); font-weight:800; font-size:11px; display:grid; place-items:center; }
+  .cta { display:block; width:100%; border:none; background:var(--safe); color:#fff; font-weight:700; font-size:13px; padding:10px; border-radius:11px; cursor:pointer; }
+  .cta:hover { filter:brightness(1.05); }
+  .foot { font-size:10px; color:#b4a89e; text-align:center; padding:9px 16px 13px; }
+  .stat { font-size:11px; color:var(--muted); text-align:center; padding:0 16px 6px; }
+</style>
+</head>
+<body>
+  <div class="hd">
+    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2C7 5 4 9 4 14a8 8 0 0016 0c0-5-3-9-8-12z" fill="currentColor" opacity=".25"/><path d="M12 21c-.3-5 .8-9 4-12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+    <b>NurtureSafe</b>
+  </div>
+  <div class="body">
+    Gentle pregnancy & nursing safety checks — right on the product page.
+    <ul class="steps">
+      <li><span class="n">1</span><span>Open any product page (skincare, wellness, food).</span></li>
+      <li><span class="n">2</span><span>We quietly read the ingredient list.</span></li>
+      <li><span class="n">3</span><span>A soft card appears top-right with your verdict.</span></li>
+    </ul>
+    <button class="cta" id="rescan">Check this page now</button>
+  </div>
+  <div class="stat" id="stat"></div>
+  <div class="foot">Decision-support, not medical advice. Confirm with your clinician.</div>
+  <script src="popup.js"></script>
+</body>
+</html>
